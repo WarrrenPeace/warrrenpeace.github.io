@@ -11,145 +11,11 @@ body
   flex-direction: column;
 }
 
-/* Index stuff below*/
-.center-text-fill
-{
-  overflow: hidden;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 3.5rem;
-  
-  background: radial-gradient(
-    circle at center,
-    #58a59b 5%,
-    #000000 85%
-  );
-}
-.scramble-text 
-{
-  max-width: 800px;
-  width: 100%;
-  max-height: 800px;
-  min-height: 120px;
-  height: 100%;
-  color: #cbf9f9;
-  text-align: center;
-  padding: 1rem;
-  font-family: monospace;
-  font-size: 1.5rem;
-  letter-spacing: 1px;
-  cursor: pointer;
-  user-select: none;
-  transition: color 0.4s;
-}
-.scramble-text.hidden 
-{
-  display: none;
-  pointer-events: none;
-  min-height: 120px;
-  width: 0px ;
-  max-width: 0px ;
-}
-.scramble-text.visible 
-{
-  display: block;
-  min-height: 120px;
-}
-.scramble-text.revealed 
-{
-  max-width: 800px;
-  width: 100%;
-  max-height: 800px;
-  min-height: 120px;
-  height: 100%;
-  color: #cbf9f9;
-  font-family: monospace;
-  letter-spacing: normal;
-  text-align: center;
-  font-size: 1.5rem;
-}
-
-/* Home page stuff below*/
-.home-container
-{
-  position: relative;
-  height: 100vh;
-  width: 100%;
-}
-.home-left-container
-{
-  position: absolute;
-  width: 50%;
-  height: 100%;
-
-  left: 0;
-  top: 0;
-}
-.home-right-container
-{
-  position: fixed;
-  width: 50%;
-  height: 100%;
-
-  right: 0;
-  top: 0;
-}
-.home-title
-{
-  margin: 0 auto;
-  
-  font-family: monospace;
-  letter-spacing: normal;
-  color: #cbf9f9;
-  text-align: center;
-  font-size: 2.5rem;
-  max-width: 800px;
-  width: 100%;
-  padding: 40px;
-}
-
-.welcome-text
-{
-  margin: 0 auto;
-  
-  font-family: monospace;
-  letter-spacing: normal;
-  color: #cbf9f9;
-  text-align: center;
-  font-size: 1.25rem;
-  max-width: 800px;
-  width: 100%;
-  padding: 40px;
-}
-.chat-wall
-{
-  position: relative;
-  margin: 0 auto;
-  
-  width: 585px; 
-  height: 450px;
-  
-  /*background*/
-  background: url("media/NomaiWall.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  
-  text-align: center;
-}
-.chat-box
-{
-  position: absolute;
-  width: 100%;
-
-}
 
 
 
-/* Shiplog stuff below*/
+
+
 .title 
 {
   position: relative;
@@ -158,101 +24,70 @@ body
   height: auto;
   text-align: center;
 }   
-.badge 
-{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100px;
-  height: 100px;
-  padding: 10px;
-}
-.badge-right 
-{
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100px;
-  height: 100px;
-  padding: 10px;
-}
-.underconstruction 
-{
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 250px;
-  height: 250px;
-  max-width: 250px;
-  max-height: 250px;
-  padding: 10px;
-  z-index:1000;
-}
-.log 
-{
-  flex: 1 1 auto;
-  position: relative;
-  overflow: auto;
-  min-height: 200px;
-  
-  
-  padding: 10px;
-  outline: 3px solid #294189;
-  outline-offset: -15px;
-  border-radius: 12px;
 
-}
-.log-text 
-{
-  position: relative;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 200px;
-  width: 100%;
-  background-color: black;
-  z-index: 1000;
-}
-.loglibrary 
+/* Shiplog stuff below*/
+.log
 {
   flex: 1 1 auto;
   position: relative;
-  overflow-y:auto ;
+  overflow: hidden;
   min-height: 200px;
   
-  padding: 10px;
-  outline: 3px solid #294189;
+  
+  padding: 40px;
+  outline: 6px solid #294189;
   outline-offset: -15px;
   border-radius: 12px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  min-height: 100vh;
 }
 .logentry 
 {
   position: absolute;
-  background-color: #717171;
+  background-color: #858585;
   top: 0;
   left: 0;
-  width: 150px;
-  height: 200px;
-  padding: 10px;
+  width: 175px;
+  height: 225px;
+  padding: 0px;
   
   transition: all 0.3s ease;
   box-shadow: 0 4px 12px rgba(0,0,0,0.4);
 }
 .logentry-text 
 {
+  overflow: hidden;
+
   text-align: center;
-  color: black;
-  font-size: 1.25rem;
+  font-family: monospace;
+  color: rgb(19, 19, 19);
+  font-size: 1.5rem;
+  font-weight: bold;
+  height: 25%;
+  display: grid;
+  place-items: center;
 }
 .logentry-img 
 {
-  position: absolute;
+  position: relative;
+  overflow: hidden;
   bottom: 4px;
   left: 4px;
   right: 0;
   width: 95%;
-  height: 160px;
+  height: 75%;
+  object-fit: contain;
 }
+
+
+/* Logs */ 
+.grey-entry-hover
+{
+  background-color: rgb(119, 119, 119)
+}
+
+
 .base 
 {
   position: relative;
@@ -264,4 +99,16 @@ body
   width: 100%;
   background-color: black;
   z-index: 1000;
+}
+
+
+
+
+/* About Pages */ 
+.about_page_text
+{
+  overflow: hidden;
+  color: #cbf9f9;
+  font-family: monospace;
+  font-size: 1.25rem;
 }
