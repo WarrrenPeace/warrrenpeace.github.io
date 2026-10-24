@@ -1,6 +1,6 @@
 body 
 {
-  background-color: #070d1f;
+  background-color: #0a1024;
   color: White;
   font-family: "Didact Gothic", sans-serif;
   font-weight: 400;
@@ -11,36 +11,52 @@ body
   flex-direction: column;
 }
 
-
-
-
+.viewport
+{
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+}
 
 
 .title 
 {
-  position: relative;
+  position: fixed;
   background-color: black;
   width: 100%;
   height: auto;
   text-align: center;
+  z-index: 10;
 }   
 
+
+
 /* Shiplog stuff below*/
+.log_Border
+{
+  flex: 1 1;
+  position: fixed;
+  top: 14%;
+  width: 94%;
+  height: 75%;
+
+  padding: 40px;
+  outline: 6px solid #233772;
+  outline-offset: -15px;
+  border-radius: 12px;
+
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.0);
+
+  pointer-events: none;
+}
 .log
 {
   flex: 1 1 auto;
   position: relative;
-  overflow: hidden;
-  min-height: 200px;
+  height: 1500px;
+  width: 2000px;
   
-  
-  padding: 40px;
-  outline: 6px solid #294189;
-  outline-offset: -15px;
-  border-radius: 12px;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  min-height: 100vh;
 }
 .logentry 
 {
@@ -61,9 +77,9 @@ body
 
   text-align: center;
   font-family: monospace;
-  color: rgb(19, 19, 19);
-  font-size: 1.5rem;
-  font-weight: bold;
+  color: rgb(0, 0, 0);
+  font-size: 1.4rem;
+  font-weight: normal;
   height: 25%;
   display: grid;
   place-items: center;
@@ -78,6 +94,8 @@ body
   width: 95%;
   height: 75%;
   object-fit: contain;
+
+  /*filter: grayscale(100%); */
 }
 
 
@@ -105,10 +123,53 @@ body
 
 
 /* About Pages */ 
+.log_fake
+{
+  flex: 1 1 auto;
+  outline: 6px solid #233772;
+  outline-offset: -15px;
+  border-radius: 12px;
+
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.simple_center_of_screen
+{
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 .about_page_text
 {
   overflow: hidden;
-  color: #cbf9f9;
+  color: #e3eeee;
+
+  text-align: left;
   font-family: monospace;
   font-size: 1.25rem;
+
+  outline: 6px solid #294189;
+  padding: 10px;
+  
+}
+.simple_center_text
+{
+  text-align: center;
+}
+
+.about_page_top
+{
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.about_page_img_border
+{
+  outline: 6px solid #294189;
+  padding: 10px;
 }
